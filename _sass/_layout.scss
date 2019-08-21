@@ -2,7 +2,7 @@ body {
 	margin: 0;
 	color: $font-color;
 	font-family: $font-style;
-	font-size: 1.1em;
+	font-size: 1.3em;
 	line-height: 1.6;
 	-webkit-font-smoothing: antialiased;
 	text-align: center;
@@ -31,12 +31,10 @@ h2 {
 a,
 a:visited {
 	color: $link-color;
-	text-decoration: underline;
 	font-weight: bold;
 }
 a:hover {
 	color: $link-hover-color;
-	text-decoration: underline;
 }
 header {
 	background: $header;
@@ -44,16 +42,6 @@ header {
 	text-align: center;
 	margin: 50px 0 0;
 	height: 50vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-carousel {
-	background: $header;
-	padding: 0px 15px;
-	text-align: center;
-	margin: 50px 0 0;
-	height: 70vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -67,7 +55,7 @@ time {
 	color: #898989;
 }
 .container {
-	max-width: $content-width;
+	max-width: 100%;
 	margin: 0 auto;
 }
 
@@ -77,15 +65,14 @@ aside {
 	position: fixed;
 	top: 0;
 	left: 0;
-	background: #fff;
+	background: #000;
 	width: 100%;
 	z-index: 2;
-	border-bottom: 1px solid lighten($light, 30%);
 	box-shadow: 0px 5px 5px RGBA(4, 25, 54, .1);
 	nav {
-		float: left;
+		float: right;
 		max-width: 800px;
-		margin: 0 auto;
+		margin:  auto;
 		ul {
 			margin: 0;
 			padding: 0;
@@ -93,13 +80,13 @@ aside {
 			li {
 				float: left;
 				position: relative;
-				a {
+				a, a:visited {
+					color: $main;
 					text-decoration: none;
 					display: block;
-					padding: 15px;
-					font-family: 'Muli', sans-serif;
+					padding: 25px;
 					line-height: 20px;
-					margin-bottom: -1px;
+					margin-bottom: 0px;
 					box-shadow: 0;
 					&:hover,
 					&:active {
@@ -119,5 +106,126 @@ aside {
 }
 footer {
 	text-align: center;
-	padding: 40px;
+	color: $main;
+	padding: 20px 50px;
+	margin: 50px 0 0;
+	background: $footer;
+	width: 100%;
+	height: 100px;
+}
+
+* {box-sizing: border-box}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  margin: 70px 0 0;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: auto;
+  padding: 15%;
+  padding-right: 3%;
+  padding-left: 3%;
+  color: white;
+  font-weight: bold;
+  font-size: 3vw;
+  transition: 0.6s ease;
+  user-select: none;
+  background-color: rgba(255,255,255,0.2)
+}
+
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(255,255,255,0.5);
+}
+
+/* Caption text */
+.text {
+  color: #fff;
+  font-size: 5vw;
+  padding: 8px 12px;
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  text-shadow: 0 3px 5px #000;
+  a:link, a:visited, a:hover, a:active {
+	  color: $main;
+	  text-decoration: none;
+	  font-weight: normal;
+	}
+}
+
+.subtitle {
+  color: $main;
+  font-size: 2vw;
+  font-family: Cambria;
+  font-style: italic;
+  padding: 8px 12px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  text-shadow: 0 3px 5px #000;
+  a:link, a:visited, a:hover, a:active {
+	  color: $main;
+	  text-decoration: none;
+	  font-weight: normal;
+	}
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
 }
