@@ -4,9 +4,9 @@ email: lilliw2@uci.edu
 description: >
   A Jekyll landing page with a carousel.
 baseurl: "/merry-go-round"
-url: "http://lillworkspace.github.io"
+url: "http://singhaidotnish.github.io"
 twitter_username: 
-github_username:  lillworkspace
+github_username:  singhaidotnish
 # Build Settings
 sass:
   sass_dir: _sass
